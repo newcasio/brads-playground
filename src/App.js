@@ -1,7 +1,7 @@
 import React from "react";
 
 import Heading from "./components/Heading";
-import MyMap from "./components/MyMap";
+import MyMap from "./components/map/MyMap";
 
 import "./App.css";
 
