@@ -34,7 +34,6 @@ class MapInput extends Component {
           ],
           name: addressData.results[0].formatted_address
         });
-        // console.log(addressData.results[0].formatted_address);
       });
   }
 
