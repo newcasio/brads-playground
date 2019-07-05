@@ -27,17 +27,25 @@
 .mosaicWrapper {
   margin: 3em;
   display: grid;
-  grid-gap: 1em;
+  grid-gap: 0.5em;
   /*set min and max height of rows*/
-  grid-auto-rows: minmax(50px, auto);
+  grid-auto-rows: minmax(200, 200);
 }
 .mosaicWrapper div {
   background-color: #eee;
-  padding: 1em;
 }
 
 .mosaicWrapper div:nth-child(odd) {
   background-color: #ddd;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+box {
+  padding: 0;
 }
 
 .box1 {
