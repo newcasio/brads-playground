@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MapInput from "./MapInput";
 import {
   GoogleMap,
   withScriptjs,
@@ -65,6 +66,7 @@ const mapUrlGoogle = `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=
 function MyMap() {
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
+      <MapInput />
       <WrappedMap
         googleMapURL={mapUrlGoogle}
         loadingElement={<div style={{ height: "100%" }} />}
@@ -74,19 +76,5 @@ function MyMap() {
     </div>
   );
 }
-
-// function MyMap() {
-//   let API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-//   let url = `https://www.google.com/maps/embed/v1/place?q=glenelg&key=${API_KEY}`;
-//   return (
-//     <div>
-//       <Map
-//         google={this.props.google}
-//         zoom={8}
-//         initialCenter={{ lat: 47.444, lng: -122.176 }}
-//       />
-//     </div>
-//   );
-// }
 
 export default MyMap;
