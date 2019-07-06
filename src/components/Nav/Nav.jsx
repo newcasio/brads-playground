@@ -5,16 +5,15 @@ function Nav() {
   return (
     <div>
       <nav>
-        <h3>I am the nav</h3>
         <ul className="navlinks">
-          <Link to="/home">
+          <Link to="/">
             <li>Home</li>
           </Link>
-          <Link to="/page1">
-            <li>New Page</li>
+          <Link to="/map">
+            <li>Google Maps</li>
           </Link>
-          <Link to="/page2">
-            <li>Second Page</li>
+          <Link to="/css_grid">
+            <li>CSS grid</li>
           </Link>
         </ul>
       </nav>

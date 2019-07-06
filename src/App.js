@@ -1,31 +1,26 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Nav from "./components/Nav";
-import NewPage from "./NewPage";
-import Page2 from "./Page2";
-import HomePage from "./HomePage";
-
+import Nav from "./components/Nav/Nav";
 import Heading from "./components/Heading";
-import MyMap from "./components/map/MyMap";
-import Mosaic from "./components/Mosaic";
+import HomePage from "./components/Home/HomePage";
+import MyMap from "./components/Map/MyMap";
+import Mosaic from "./components/Grid/Mosaic";
 
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
+      <Heading />
       <Router>
         <Nav />
         <Switch>
           <Route path="/" exact component={HomePage} />
-          <Route path="/page1" component={NewPage} />
-          <Route path="/page2" component={Page2} />
+          <Route path="/map" component={MyMap} />
+          <Route path="/css_grid" component={Mosaic} />
         </Switch>
       </Router>
-      <Heading />
-      <MyMap />
-      <Mosaic />
     </div>
   );
 }
