@@ -23,6 +23,23 @@
   color: #61dafb;
 }
 
+/* NAV/ROUTER STYLINGS */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: orchid;
+}
+
+.navlinks {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  min-width: 40%;
+}
+
 /* GRID STYLINGS */
 .mosaicWrapper {
   margin: 3em;
