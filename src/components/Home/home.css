@@ -1,0 +1,31 @@
+.myTitle {
+  opacity: 0.2;
+  transition: opacity 3s;
+}
+
+.myTitle:hover {
+  opacity: 1;
+}
+
+/* Homepage animation */
+.myName {
+  color: red;
+  display: inline-block;
+  animation-name: nameMove;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  position: relative;
+  animation-delay: 1s;
+  left: -300px;
+}
+
+@keyframes nameMove {
+  from {
+    color: red;
+    left: -300px;
+  }
+  to {
+    color: greenyellow;
+    left: 400px;
+  }
+}

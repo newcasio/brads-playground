@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Nav.css";
+import "./nav.css";
 
 function Side(props) {
   let sideClass = "side";
@@ -14,10 +14,10 @@ function Side(props) {
           <a href="/">Home</a>
         </li>
         <li>
-          <a href="/">Google Map</a>
+          <a href="/map">Google Map</a>
         </li>
         <li>
-          <a href="/">CSS grid</a>
+          <a href="/css_grid">CSS grid</a>
         </li>
       </ul>
     </nav>

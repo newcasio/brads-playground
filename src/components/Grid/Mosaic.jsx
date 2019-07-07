@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./mosaic.css";
+
 function Mosaic() {
   return (
     <div className="mosaicWrapper">

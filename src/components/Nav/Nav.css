@@ -1,4 +1,12 @@
 /* NAV/ROUTER STYLINGS */
+
+@import url("https://fonts.googleapis.com/css?family=Barriecito&display=swap");
+
+.logo__style {
+  font-family: "Barriecito", cursive;
+  font-size: 2rem;
+}
+
 nav {
   width: 100%;
   position: fixed;
@@ -58,12 +66,6 @@ nav {
 
 .hamburger:focus {
   outline: none;
-}
-
-.hamburger-line {
-  width: 28px;
-  height: 2px;
-  background: white;
 }
 
 .side {

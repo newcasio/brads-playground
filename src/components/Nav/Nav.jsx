@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import SideToggle from "./SideToggle";
+import Logo from "./Logo";
 
-import "./Nav.css";
+import "./nav.css";
 
 function Nav(props) {
   return (
@@ -12,7 +13,7 @@ function Nav(props) {
         <div>
           <SideToggle click={props.sideToggleHandler} />
         </div>
-        <div className="nav__logo">Brad's Playground</div>
+        <Logo className="nav__logo" />
         <div className="space" />
         <ul className="navlinks">
           <Link className="nav__link" to="/">
