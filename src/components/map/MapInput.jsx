@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import axios from "axios";
 
+import "./map.css";
+
 class MapInput extends Component {
   constructor(props) {
     super(props);
@@ -43,7 +45,7 @@ class MapInput extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="addressInput">
         <label>Search for address </label>
         <input type="text" onChange={this.handleChange} />
 

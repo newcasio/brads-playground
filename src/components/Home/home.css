@@ -1,15 +1,23 @@
+.home__wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("dirrt.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.9;
+}
+
 .myTitle {
   opacity: 0.2;
   transition: opacity 3s;
+  position: relative;
 }
 
 .myTitle:hover {
   opacity: 1;
 }
 
-/* Homepage animation */
-.myName {
-  color: red;
+.home__titles {
   display: inline-block;
   animation-name: nameMove;
   animation-duration: 3s;
@@ -19,6 +27,10 @@
   left: -300px;
 }
 
+.myName {
+  color: red;
+}
+
 @keyframes nameMove {
   from {
     color: red;
@@ -26,6 +38,6 @@
   }
   to {
     color: greenyellow;
-    left: 400px;
+    left: 48%;
   }
 }

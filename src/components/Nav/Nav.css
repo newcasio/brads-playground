@@ -5,6 +5,7 @@
 .logo__style {
   font-family: "Barriecito", cursive;
   font-size: 2rem;
+  color: #2aade3;
 }
 
 nav {
@@ -16,7 +17,8 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: orchid;
+  background: black;
+  z-index: 1;
 }
 
 .nav__contents {
