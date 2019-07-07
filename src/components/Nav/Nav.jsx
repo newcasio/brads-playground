@@ -1,18 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Nav() {
+import SideToggle from "./SideToggle";
+
+import "./Nav.css";
+
+function Nav(props) {
   return (
     <div>
-      <nav>
+      <nav className="nav__contents">
+        <div>
+          <SideToggle click={props.sideToggleHandler} />
+        </div>
+        <div className="nav__logo">Brad's Playground</div>
+        <div className="space" />
         <ul className="navlinks">
-          <Link to="/">
+          <Link className="nav__link" to="/">
             <li>Home</li>
           </Link>
-          <Link to="/map">
+          <Link className="nav__link" to="/map">
             <li>Google Maps</li>
           </Link>
-          <Link to="/css_grid">
+          <Link className="nav__link" to="/css_grid">
             <li>CSS grid</li>
           </Link>
         </ul>
