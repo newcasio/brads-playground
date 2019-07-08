@@ -27,10 +27,6 @@
   left: -300px;
 }
 
-.myName {
-  color: red;
-}
-
 @keyframes nameMove {
   from {
     color: red;
