@@ -7,11 +7,11 @@ let Name = () => {
       rotation: 360,
       ease: Elastic.easeOut
     });
+    TweenMax.from(".homepage__text", 4, { opacity: 0 });
   });
   return (
     <div className="homepage__text ">
       <h2>Bradley's Page</h2>
-      {/* <button onClick={animateName}>Press</button> */}
     </div>
   );
 };

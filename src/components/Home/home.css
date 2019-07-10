@@ -11,8 +11,23 @@
   text-align: center;
   padding: 400px 0;
   font-family: "Bangers", cursive;
+  grid-column: 2/3;
 }
 
 .homepage__text > h2 {
   font-size: 40px;
+}
+
+.splat {
+  width: 25%;
+  position: relative;
+  top: -800px;
+  left: 10%;
+}
+
+.bang {
+  width: 25%;
+  position: relative;
+  left: 40%;
+  top: -800px;
 }
