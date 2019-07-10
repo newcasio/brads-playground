@@ -11,7 +11,7 @@ function Side(props) {
     <nav className={sideClass}>
       <ul>
         <li>
-          <a href="/">Home</a>
+          <a href="/animations">Animations</a>
         </li>
         <li>
           <a href="/map">Google Map</a>

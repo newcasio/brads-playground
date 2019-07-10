@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Nav from "./components/Nav/Nav";
-import HomePage from "./components/Home/HomePage";
+import Home from "./components/Home/Home";
+import Animation from "./components/Animation/Animation";
 import MyMap from "./components/Map/MyMap";
 import Mosaic from "./components/Grid/Mosaic";
 import Side from "./components/Nav/Side";
@@ -37,7 +38,8 @@ function App() {
         <Nav sideToggleHandler={sideToggleClickHandler} />
         <div style={{ marginTop: "12vh" }}>
           <Switch>
-            <Route path="/" exact component={HomePage} />
+            <Route path="/" exact component={Home} />
+            <Route path="/animations" exact component={Animation} />
             <Route path="/map" component={MyMap} />
             <Route path="/css_grid" component={Mosaic} />
           </Switch>

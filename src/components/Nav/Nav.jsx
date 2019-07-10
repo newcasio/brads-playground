@@ -16,8 +16,8 @@ function Nav(props) {
         <Logo className="nav__logo" />
         <div className="space" />
         <ul className="navlinks">
-          <Link className="nav__link" to="/">
-            <li>Home</li>
+          <Link className="nav__link" to="/animations">
+            <li>Animations</li>
           </Link>
           <Link className="nav__link" to="/map">
             <li>Google Maps</li>

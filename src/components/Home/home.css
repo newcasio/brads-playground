@@ -1,43 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Bangers&display=swap");
 .home__wrapper {
+  border: black 1px solid;
+  margin: 40px;
   height: 100vh;
-  width: 100vw;
-  background-image: url("dirrt.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  opacity: 0.9;
+  background: black;
 }
 
-.myTitle {
-  opacity: 0.2;
-  transition: opacity 3s;
-  position: relative;
+.homepage__text {
+  color: yellow;
+  text-align: center;
+  padding: 400px 0;
+  font-family: "Bangers", cursive;
 }
 
-.myTitle:hover {
-  opacity: 1;
-}
-
-.home__titles {
-  display: inline-block;
-  animation-name: nameMove;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-  position: relative;
-  animation-delay: 1s;
-  left: -300px;
-}
-
-@keyframes nameMove {
-  from {
-    color: red;
-    left: -300px;
-  }
-  to {
-    color: greenyellow;
-    left: 48%;
-  }
-}
-
-.big__text {
-  margin-left: 30px;
+.homepage__text > h2 {
+  font-size: 40px;
 }

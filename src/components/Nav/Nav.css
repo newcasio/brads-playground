@@ -27,7 +27,6 @@ nav {
 
 .nav__logo {
   margin-left: 25px;
-  color: green;
 }
 
 .navlinks {
@@ -37,6 +36,7 @@ nav {
   align-items: center;
   list-style: none;
   min-width: 40%;
+  margin: auto, 40px;
 }
 
 .nav__link {

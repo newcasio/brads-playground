@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { TweenMax } from "gsap/all";
+import { TweenMax, Elastic } from "gsap/all";
 
-import "./home.css";
+import "./animation.css";
 
 import BigText from "./BigText";
 
-function HomePage() {
+function Animation() {
   const [point, setPoint] = useState([]);
   const [text, setText] = useState("");
 
   //colour change
-  function click(e) {
+  function captureCoords(e) {
     let x = e.clientX;
     let y = e.clientY;
     setPoint([x, y]);
@@ -28,12 +28,11 @@ function HomePage() {
 
   //greensock animatino of input
   let run = () => {
-    console.log("running");
-    TweenMax.to(".big__text", 2, { rotation: 360 });
+    TweenMax.to(".big__text", 2, { rotation: 360, ease: Elastic.easeOut });
   };
 
   return (
-    <div className="home__wrapper" onMouseMove={click}>
+    <div className="animation__wrapper" onMouseMove={captureCoords}>
       <div className="home__titles">
         <h1 className="myName">Bradley Dong</h1>
         <h2 className="myTitle">Junior Developer </h2>
@@ -49,11 +48,10 @@ function HomePage() {
       <form>
         <label>Type here: </label>
         <input type="text" onChange={onChangeHandler} />
-        {/* <h1>{text}</h1> */}
       </form>
       <BigText textForBigText={text} animate={run} />
     </div>
   );
 }
 
-export default HomePage;
+export default Animation;
