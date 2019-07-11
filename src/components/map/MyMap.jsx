@@ -36,7 +36,7 @@ function Map() {
         />
       ))}
 
-      {/*this is a if statement, if selectedMarker is truthy do code block after && */}
+      {/*this is an if statement, if selectedMarker is truthy do code block after && */}
       {selectedMarker && (
         <InfoWindow
           position={{
@@ -56,6 +56,11 @@ function Map() {
   );
 }
 
+//get input coords from MapInput component
+const inputCoords = data => {
+  console.log(data);
+};
+
 //wrap map function within other functions
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 
@@ -66,7 +71,7 @@ const mapUrlGoogle = `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=
 function MyMap() {
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
-      <MapInput />
+      <MapInput getInput={inputCoords} />
       <WrappedMap
         googleMapURL={mapUrlGoogle}
         loadingElement={<div style={{ height: "100%" }} />}

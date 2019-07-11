@@ -16,6 +16,11 @@ class MapInput extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.sendCoords = this.sendCoords.bind(this);
+  }
+
+  sendCoords() {
+    this.props.getInput(this.state);
   }
 
   handleSubmit(e) {
@@ -36,6 +41,9 @@ class MapInput extends Component {
           ],
           name: addressData.results[0].formatted_address
         });
+      })
+      .then(() => {
+        this.sendCoords();
       });
   }
 
