@@ -18,16 +18,40 @@
   font-size: 40px;
 }
 
-.splat {
+.effects {
   width: 25%;
   position: relative;
+}
+
+.effects__top {
   top: -800px;
+}
+
+.effects__bottom {
+  top: -210px;
+}
+
+.splat {
   left: 10%;
+  opacity: 0;
+}
+.splat1 {
+  left: 40%;
+  opacity: 0;
 }
 
 .bang {
-  width: 25%;
+  left: 15%;
+  opacity: 0;
+}
+.bang1 {
+  left: -70%;
+  opacity: 0;
+}
+
+.sound__button {
   position: relative;
-  left: 40%;
-  top: -800px;
+  width: 3%;
+  top: -880px;
+  left: 95%;
 }
