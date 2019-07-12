@@ -8,13 +8,16 @@ import {
   InfoWindow
 } from "react-google-maps";
 
-import mapData from "./mapData";
+// import mapData from "./mapData";
 import mapStyles from "./mapStyles";
+
+let mapData = [];
 
 //get map coorindates
 function Map() {
   //info window for marker, start with null as nothing clicked
   const [selectedMarker, setSelectedMarker] = useState(null);
+
   return (
     <GoogleMap
       defaultOptions={{ styles: mapStyles }}
@@ -25,8 +28,8 @@ function Map() {
         <Marker
           key={marker.id}
           position={{
-            lat: marker.coord[0],
-            lng: marker.coord[1]
+            lat: marker.coords[0],
+            lng: marker.coords[1]
           }}
           onClick={() => {
             setSelectedMarker(marker);
@@ -40,8 +43,8 @@ function Map() {
       {selectedMarker && (
         <InfoWindow
           position={{
-            lat: selectedMarker.coord[0],
-            lng: selectedMarker.coord[1]
+            lat: selectedMarker.coords[0],
+            lng: selectedMarker.coords[1]
           }}
           onCloseClick={() => {
             setSelectedMarker(null);
@@ -57,29 +60,41 @@ function Map() {
 }
 
 //get input coords from MapInput component
-const inputCoords = data => {
-  console.log(data);
-};
 
 //wrap map function within other functions
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 
-//call to google maps
+//call to google maps, render map only
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 const mapUrlGoogle = `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,draing,places&key=${API_KEY}`;
 
 function MyMap() {
-  return (
-    <div style={{ width: "100vw", height: "100vh" }}>
-      <MapInput getInput={inputCoords} />
-      <WrappedMap
-        googleMapURL={mapUrlGoogle}
-        loadingElement={<div style={{ height: "100%" }} />}
-        containerElement={<div style={{ height: "100%" }} />}
-        mapElement={<div style={{ height: "100%" }} />}
-      />
-    </div>
-  );
+  const [markers, setMarkers] = useState(mapData);
+  const inputCoords = data => {
+    setMarkers(mapData.push(data));
+    console.log(data);
+  };
+
+  if (markers.length === 0) {
+    return (
+      <div>
+        <MapInput getInput={inputCoords} />
+        <h1>Please enter address</h1>
+      </div>
+    );
+  } else {
+    return (
+      <div style={{ width: "100vw", height: "100vh" }}>
+        <MapInput getInput={inputCoords} />
+        <WrappedMap
+          googleMapURL={mapUrlGoogle}
+          loadingElement={<div style={{ height: "100%" }} />}
+          containerElement={<div style={{ height: "100%" }} />}
+          mapElement={<div style={{ height: "100%" }} />}
+        />
+      </div>
+    );
+  }
 }
 
 export default MyMap;
