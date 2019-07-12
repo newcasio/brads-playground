@@ -72,14 +72,13 @@ function MyMap() {
   const [markers, setMarkers] = useState(mapData);
   const inputCoords = data => {
     setMarkers(mapData.push(data));
-    console.log(data);
   };
 
   if (markers.length === 0) {
     return (
       <div>
         <MapInput getInput={inputCoords} />
-        <h1>Please enter address</h1>
+        <h3 style={{ textAlign: "center" }}>Please enter address</h3>
       </div>
     );
   } else {
