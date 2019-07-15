@@ -4,6 +4,14 @@ import axios from "axios";
 
 import "./map.css";
 
+function Confirm(props) {
+  if (props.submitted) {
+    return <h3>Marker added</h3>;
+  } else {
+    return <h3>Cannot find address</h3>;
+  }
+}
+
 class MapInput extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +19,8 @@ class MapInput extends Component {
       searchString: "",
       address: "",
       coords: [],
-      id: 3
+      id: 3,
+      submittedOK: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,14 +41,21 @@ class MapInput extends Component {
         }&key=${API_KEY}`
       )
       .then(res => {
-        const addressData = res.data;
-        this.setState({
-          coords: [
-            addressData.results[0].geometry.location.lat,
-            addressData.results[0].geometry.location.lng
-          ],
-          name: addressData.results[0].formatted_address
-        });
+        if (res.data.status === "ZERO_RESULTS") {
+          return console.log("not found");
+        } else {
+          const addressData = res.data;
+          let newId = this.state.id + 1;
+          this.setState({
+            submittedOK: true,
+            coords: [
+              addressData.results[0].geometry.location.lat,
+              addressData.results[0].geometry.location.lng
+            ],
+            name: addressData.results[0].formatted_address,
+            id: newId
+          });
+        }
       })
       .then(() => {
         this.sendCoords();
@@ -57,6 +73,7 @@ class MapInput extends Component {
         <input type="text" onChange={this.handleChange} />
 
         <button type="submit">Search</button>
+        <Confirm submitted={this.state.submittedOK} />
       </form>
     );
   }
