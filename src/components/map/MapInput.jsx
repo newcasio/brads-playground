@@ -41,11 +41,14 @@ class MapInput extends Component {
         }&key=${API_KEY}`
       )
       .then(res => {
+        console.log(res);
+        let newId = this.state.id + 1;
         if (res.data.status === "ZERO_RESULTS") {
-          return console.log("not found");
+          this.setState({ submittedOK: false });
+          console.log("not found");
         } else {
+          console.log("else running");
           const addressData = res.data;
-          let newId = this.state.id + 1;
           this.setState({
             submittedOK: true,
             coords: [
@@ -58,7 +61,9 @@ class MapInput extends Component {
         }
       })
       .then(() => {
-        this.sendCoords();
+        if (this.state.submittedOK) {
+          this.sendCoords();
+        }
       });
   }
 

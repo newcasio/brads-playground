@@ -17,46 +17,47 @@ let mapData = [];
 function Map() {
   //info window for marker, start with null as nothing clicked
   const [selectedMarker, setSelectedMarker] = useState(null);
+  if (mapData.length !== 0) {
+    return (
+      <GoogleMap
+        defaultOptions={{ styles: mapStyles }}
+        defaultZoom={10}
+        defaultCenter={{ lat: mapData[0].coords[0], lng: mapData[0].coords[1] }}
+      >
+        {mapData.map(marker => (
+          <Marker
+            key={marker.id}
+            position={{
+              lat: marker.coords[0],
+              lng: marker.coords[1]
+            }}
+            onClick={() => {
+              setSelectedMarker(marker);
+            }}
+            //marker icon set
+            icon="https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
+          />
+        ))}
 
-  return (
-    <GoogleMap
-      defaultOptions={{ styles: mapStyles }}
-      defaultZoom={10}
-      defaultCenter={{ lat: mapData[0].coords[0], lng: mapData[0].coords[1] }}
-    >
-      {mapData.map(marker => (
-        <Marker
-          key={marker.id}
-          position={{
-            lat: marker.coords[0],
-            lng: marker.coords[1]
-          }}
-          onClick={() => {
-            setSelectedMarker(marker);
-          }}
-          //marker icon set
-          icon="https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
-        />
-      ))}
-
-      {/*this is an if statement, if selectedMarker is truthy do code block after && */}
-      {selectedMarker && (
-        <InfoWindow
-          position={{
-            lat: selectedMarker.coords[0],
-            lng: selectedMarker.coords[1]
-          }}
-          onCloseClick={() => {
-            setSelectedMarker(null);
-          }}
-        >
-          <div>
-            <h4>{selectedMarker.name}</h4>
-          </div>
-        </InfoWindow>
-      )}
-    </GoogleMap>
-  );
+        {/*this is an if statement, if selectedMarker is truthy do code block after && */}
+        {selectedMarker && (
+          <InfoWindow
+            position={{
+              lat: selectedMarker.coords[0],
+              lng: selectedMarker.coords[1]
+            }}
+            onCloseClick={() => {
+              setSelectedMarker(null);
+            }}
+          >
+            <div>
+              <h4>{selectedMarker.name}</h4>
+            </div>
+          </InfoWindow>
+        )}
+      </GoogleMap>
+    );
+  }
 }
 
 //get input coords from MapInput component
@@ -72,6 +73,7 @@ function MyMap() {
   const [markers, setMarkers] = useState(mapData);
   const inputCoords = data => {
     setMarkers(mapData.push(data));
+    console.log(mapData);
   };
 
   if (markers.length === 0) {
