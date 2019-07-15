@@ -23,3 +23,4 @@ Use Google Maps API to get coordinates of a address (geolocation), then use this
 ### __***Grid***__
 
 Use of CSS grid to create simple mosaic layout.  Responsive design changes with width of page. 
+

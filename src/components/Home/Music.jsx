@@ -6,22 +6,27 @@ import batmanIcon from "./soundEffects/batman.png";
 import noSound from "./soundEffects/noSound.png";
 
 function Music() {
-  const [sound, setSound] = useState(Sound.status.PLAYING);
   const [playIcon, setPlayIcon] = useState(noSound);
+  const [soundVolume, setSoundVolume] = useState("100");
 
   const stopMusic = () => {
-    if (sound === Sound.status.PLAYING) {
-      setSound(Sound.status.PAUSE);
+    if (soundVolume === "100") {
+      setSoundVolume("0");
       setPlayIcon(batmanIcon);
     } else {
-      setSound(Sound.status.PLAYING);
+      setSoundVolume("100");
       setPlayIcon(noSound);
     }
   };
 
   return (
     <div>
-      <Sound url={batman} playStatus={sound} />;
+      <Sound
+        url={batman}
+        playStatus={Sound.status.PLAYING}
+        volume={soundVolume}
+      />
+      ;
       <img
         onClick={stopMusic}
         className="sound__button"

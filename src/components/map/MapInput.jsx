@@ -13,7 +13,6 @@ class MapInput extends Component {
       coords: [],
       id: 3
     };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.sendCoords = this.sendCoords.bind(this);
