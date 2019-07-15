@@ -73,7 +73,6 @@ function MyMap() {
   const [markers, setMarkers] = useState(mapData);
   const inputCoords = data => {
     setMarkers(mapData.push(data));
-    console.log(mapData);
   };
 
   if (markers.length === 0) {
