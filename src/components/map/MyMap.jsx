@@ -22,7 +22,10 @@ function Map() {
       <GoogleMap
         defaultOptions={{ styles: mapStyles }}
         defaultZoom={10}
-        defaultCenter={{ lat: mapData[0].coords[0], lng: mapData[0].coords[1] }}
+        defaultCenter={{
+          lat: mapData[0].coords[0],
+          lng: mapData[0].coords[1]
+        }}
       >
         {mapData.map(marker => (
           <Marker

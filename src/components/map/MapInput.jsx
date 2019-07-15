@@ -9,6 +9,8 @@ function Confirm(props) {
     return null;
   } else if (props.submitted) {
     return <h3>Marker added at {props.address}</h3>;
+  } else if (!props.server) {
+    return <h3>Request denied. Please check you API key.</h3>;
   } else {
     return <h3>Cannot find address</h3>;
   }
@@ -22,7 +24,8 @@ class MapInput extends Component {
       address: "",
       coords: [],
       id: 3,
-      submittedOK: null
+      submittedOK: null,
+      serverOK: true
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -44,19 +47,23 @@ class MapInput extends Component {
       )
       .then(res => {
         let newId = this.state.id + 1;
-        if (res.data.status === "ZERO_RESULTS") {
-          this.setState({ submittedOK: false });
+        if (res.data.status === "REQUEST_DENIED") {
+          this.setState({ serverOK: false, submittedOK: false });
         } else {
-          const addressData = res.data;
-          this.setState({
-            submittedOK: true,
-            coords: [
-              addressData.results[0].geometry.location.lat,
-              addressData.results[0].geometry.location.lng
-            ],
-            name: addressData.results[0].formatted_address,
-            id: newId
-          });
+          if (res.data.status === "ZERO_RESULTS") {
+            this.setState({ submittedOK: false });
+          } else {
+            const addressData = res.data;
+            this.setState({
+              submittedOK: true,
+              coords: [
+                addressData.results[0].geometry.location.lat,
+                addressData.results[0].geometry.location.lng
+              ],
+              name: addressData.results[0].formatted_address,
+              id: newId
+            });
+          }
         }
       })
       .then(() => {
@@ -76,7 +83,11 @@ class MapInput extends Component {
         <label>Search for address </label>
         <input type="text" onChange={this.handleChange} />
         <button type="submit">Search</button>
-        <Confirm submitted={this.state.submittedOK} address={this.state.name} />
+        <Confirm
+          submitted={this.state.submittedOK}
+          address={this.state.name}
+          server={this.state.serverOK}
+        />
       </form>
     );
   }
