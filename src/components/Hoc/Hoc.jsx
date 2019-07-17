@@ -1,5 +1,3 @@
-//share common functionality between components.
-
 import React, { Component } from "react";
 
 import ClickCounter from "./ClickCounter.jsx";
