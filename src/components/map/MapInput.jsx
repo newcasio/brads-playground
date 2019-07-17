@@ -36,41 +36,40 @@ class MapInput extends Component {
     this.props.getInput(this.state);
   }
 
-  handleSubmit(e) {
-    const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-    e.preventDefault();
-    axios
-      .get(
+  async handleSubmit(e) {
+    try {
+      const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+      e.preventDefault();
+      let call = await axios.get(
         `https://maps.googleapis.com/maps/api/geocode/json?address=${
           this.state.searchString
         }&key=${API_KEY}`
-      )
-      .then(res => {
-        let newId = this.state.id + 1;
-        if (res.data.status === "REQUEST_DENIED") {
-          this.setState({ serverOK: false, submittedOK: false });
+      );
+      let newId = this.state.id + 1;
+      if (call.data.status === "REQUEST_DENIED") {
+        this.setState({ serverOK: false, submittedOK: false });
+      } else {
+        if (call.data.status === "ZERO_RESULTS") {
+          this.setState({ submittedOK: false });
         } else {
-          if (res.data.status === "ZERO_RESULTS") {
-            this.setState({ submittedOK: false });
-          } else {
-            const addressData = res.data;
-            this.setState({
-              submittedOK: true,
-              coords: [
-                addressData.results[0].geometry.location.lat,
-                addressData.results[0].geometry.location.lng
-              ],
-              name: addressData.results[0].formatted_address,
-              id: newId
-            });
-          }
+          const addressData = call.data;
+          this.setState({
+            submittedOK: true,
+            coords: [
+              addressData.results[0].geometry.location.lat,
+              addressData.results[0].geometry.location.lng
+            ],
+            name: addressData.results[0].formatted_address,
+            id: newId
+          });
         }
-      })
-      .then(() => {
-        if (this.state.submittedOK) {
-          this.sendCoords();
-        }
-      });
+      }
+      if (this.state.submittedOK) {
+        this.sendCoords();
+      }
+    } catch (err) {
+      this.setState({ serverOK: false });
+    }
   }
 
   handleChange(event) {
