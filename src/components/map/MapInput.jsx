@@ -5,12 +5,12 @@ import axios from "axios";
 import "./map.css";
 
 function Confirm(props) {
-  if (props.submitted === null) {
-    return null;
+  if (props.submitted === null && !props.server) {
+    return <h3>Request denied. Please check you API key.</h3>;
   } else if (props.submitted) {
     return <h3>Marker added at {props.address}</h3>;
-  } else if (!props.server) {
-    return <h3>Request denied. Please check you API key.</h3>;
+  } else if (!props.server && props.submitted === true) {
+    return null;
   } else {
     return <h3>Cannot find address</h3>;
   }
@@ -68,7 +68,9 @@ class MapInput extends Component {
         this.sendCoords();
       }
     } catch (err) {
-      this.setState({ serverOK: false });
+      console.log("catch clause");
+
+      this.setState({ serverOK: false, submitted: true });
     }
   }
 
