@@ -20,3 +20,26 @@ Adds functionality or data to original component.
 
  The new functionalilty is now available within the orginal component via "this.props.`attribute`".
  
+
+Pass paraments to the HOC where you pass WrappedComponent.  Then when you pass original compoment to the HOC in the export default line, just add the argument.
+
+
+ ## Naming conventions of HOC
+
+ function name indicates added functionality, in this case `withCounter` = `UpdatedComponent`.
+
+ `OriginalComponent` is usally called `WrappedComponent` because it is being passed into the function.
+
+ The NewComponent is usually name the same as the function, but with a captial (being a component), `WithCounter`.
+
+
+
+ ## Note on props
+
+ If you pass props to the original component from the parent component, they are passed to the HOC, not the original component.  
+ eg. `<ClickCounter name="Brad">`.  
+ In the ClickCount component, this.props.name does not work.
+
+In the HOC, just add the prop to the WrappedComponent. 
+
+Use the spread operator to pass all props originally passed by the origal component to the enhanced component (easier than listing each prop to pass down).

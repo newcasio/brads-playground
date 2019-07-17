@@ -9,8 +9,8 @@ class Hoc extends Component {
   render() {
     return (
       <div>
-        <ClickCounter />
-        <HoverCounter />
+        <ClickCounter name="Brad" />
+        <HoverCounter name="Gav" />
       </div>
     );
   }

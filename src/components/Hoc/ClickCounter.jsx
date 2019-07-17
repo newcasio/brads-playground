@@ -5,15 +5,15 @@ import "./hoc.css";
 
 class ClickCounter extends Component {
   render() {
-    const { counter, currentCount } = this.props;
+    const { name, counter, currentCount } = this.props;
     return (
       <div className="click__button">
         <button onClick={counter}>
-          {this.props.name} clicked {currentCount} times
+          {name} clicked {currentCount} times
         </button>
       </div>
     );
   }
 }
 
-export default UpdatedComponent(ClickCounter);
+export default UpdatedComponent(ClickCounter, 1);
