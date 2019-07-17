@@ -25,6 +25,9 @@ function Nav(props) {
           <Link className="nav__link" to="/css_grid">
             <li>CSS grid</li>
           </Link>
+          <Link className="nav__link" to="/hoc">
+            <li>Higher Order Components</li>
+          </Link>
         </ul>
       </nav>
     </div>

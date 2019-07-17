@@ -37,6 +37,7 @@ nav {
   list-style: none;
   min-width: 40%;
   margin: auto, 40px;
+  padding: 0 20px;
 }
 
 .nav__link {

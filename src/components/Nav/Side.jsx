@@ -19,6 +19,9 @@ function Side(props) {
         <li>
           <a href="/css_grid">CSS grid</a>
         </li>
+        <li>
+          <a href="/hoc">Higher order components</a>
+        </li>
       </ul>
     </nav>
   );
