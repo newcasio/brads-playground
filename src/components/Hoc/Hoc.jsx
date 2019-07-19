@@ -10,7 +10,7 @@ class Hoc extends Component {
     return (
       <div>
         <ClickCounter name="Brad" />
-        <HoverCounter name="Gav" />
+        <HoverCounter name="Gav" id="100" />
       </div>
     );
   }

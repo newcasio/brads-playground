@@ -23,6 +23,8 @@ Adds functionality or data to original component.
 
 Pass paraments to the HOC where you pass WrappedComponent.  Then when you pass original compoment to the HOC in the export default line, just add the argument.
 
+Both original component and new component resulting from HOC can have own states.  State in original component is `this.state`, whereas state in the new component has to be passed back to the original component as props and will be accessed by `this.props`.
+
 
  ## Naming conventions of HOC
 
@@ -40,6 +42,6 @@ Pass paraments to the HOC where you pass WrappedComponent.  Then when you pass o
  eg. `<ClickCounter name="Brad">`.  
  In the ClickCount component, this.props.name does not work.
 
-In the HOC, just add the prop to the WrappedComponent. 
+In the HOC, the props is accessed like normal as part of `this.props`, just add as a prop to the returning WrappedComponent to be accessed in the originally targetted component. 
 
 Use the spread operator to pass all props originally passed by the origal component to the enhanced component (easier than listing each prop to pass down).

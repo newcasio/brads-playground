@@ -4,6 +4,15 @@ import UpdatedComponent from "./withCounter";
 import "./hoc.css";
 
 class ClickCounter extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      text: "My own state",
+      count: 33
+    };
+  }
+
   render() {
     const { name, counter, currentCount } = this.props;
     return (
@@ -11,6 +20,8 @@ class ClickCounter extends Component {
         <button onClick={counter}>
           {name} clicked {currentCount} times
         </button>
+        <p>{this.state.text}</p>
+        <p>Count in my state is {this.state.count}</p>
       </div>
     );
   }

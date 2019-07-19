@@ -1,3 +1,5 @@
 .click__button {
   text-align: center;
+  border: 1px blue solid;
+  margin: 20px;
 }
