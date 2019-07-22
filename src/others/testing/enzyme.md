@@ -42,5 +42,8 @@ Then just call function in `it` block
 
 Ultimately remove this from this file and have in a utility folder.  Then import to each test file.
 
+---
+use `expect(wrapper.text()).toEqual('text');` to check if text displayed by component is what you expect.
+
 
 

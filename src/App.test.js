@@ -9,7 +9,7 @@ it("renders without crashing", () => {
 });
 
 describe("stupid tests in app.test.js", () => {
-  test("2+3 equals to 5", () => {
+  it("2+3 equals to 5", () => {
     expect(2 + 3).toBe(5);
   });
 });

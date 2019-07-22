@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Logo from "./logo";
+import Logo from "../../logo";
 
 const findByTestAttr = (component, attribute) => {
   const wrapper = component.find(`[data-test='${attribute}']`);
@@ -14,7 +14,7 @@ describe("Enzyme testing within HOC group", () => {
   });
 
   it("should render logo", () => {
-    console.log(component.debug());
+    // console.log(component.debug());
     const logo = component.find(`[data-test='logo']`);
     expect(logo.length).toBe(1);
   });
