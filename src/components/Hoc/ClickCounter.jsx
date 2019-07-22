@@ -16,8 +16,11 @@ class ClickCounter extends Component {
   render() {
     const { name, counter, currentCount } = this.props;
     return (
-      <div className="click__button">
-        <button onClick={counter}>
+      <div className="click__button ">
+        <button
+          onClick={counter}
+          className="clickCounterClassForEnzymeTestingOnly"
+        >
           {name} clicked {currentCount} times
         </button>
         <p>{this.state.text}</p>
