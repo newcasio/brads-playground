@@ -6,3 +6,6 @@
 To configure enzyme, create `setupTests.js` file in the `src` folder.
 
 ![](pics/enzymeConfig.png)
+
+---
+Files to be tested include `spec.js` and `COMPONENT_NAME.test.js`.

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TweenMax, Elastic } from "gsap/all";
+import { TweenMax, Elastic } from "gsap";
 
 import "./animation.css";
 

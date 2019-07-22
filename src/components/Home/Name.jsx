@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { TweenMax, Elastic } from "gsap/all";
+import { TweenMax, Elastic } from "gsap";
 
 let Name = () => {
   useEffect(() => {

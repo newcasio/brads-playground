@@ -3,3 +3,10 @@
   border: 1px blue solid;
   margin: 20px;
 }
+
+.logo {
+  max-width: 30%;
+  height: auto;
+  display: block;
+  margin: auto;
+}

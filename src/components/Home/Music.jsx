@@ -7,14 +7,14 @@ import noSound from "./soundEffects/noSound.png";
 
 function Music() {
   const [playIcon, setPlayIcon] = useState(noSound);
-  const [soundVolume, setSoundVolume] = useState("100");
+  const [soundVolume, setSoundVolume] = useState(100);
 
   const stopMusic = () => {
-    if (soundVolume === "100") {
+    if (soundVolume === 100) {
       setSoundVolume("0");
       setPlayIcon(batmanIcon);
     } else {
-      setSoundVolume("100");
+      setSoundVolume(100);
       setPlayIcon(noSound);
     }
   };
