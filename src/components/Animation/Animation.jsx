@@ -4,6 +4,7 @@ import { TweenMax, Elastic } from "gsap";
 import "./animation.css";
 
 import BigText from "./BigText";
+import See from "./See.jsx";
 
 function Animation() {
   const [point, setPoint] = useState([]);
@@ -33,23 +34,26 @@ function Animation() {
 
   return (
     <div className="animation__wrapper" onMouseMove={captureCoords}>
-      <div className="home__titles">
-        <h1 className="myName">Bradley Dong</h1>
-        <h2 className="myTitle">Junior Developer </h2>
+      <div className="animation__content">
+        <div className="home__titles">
+          <h1 className="myName">Bradley Dong</h1>
+          <h2 className="myTitle">Junior Developer </h2>
+        </div>
+
+        <h3 style={colour}>
+          <p>
+            Your mouse is at {point[0]}, {point[1]}
+          </p>
+          <p>Your text colour is changing according to the mouse position</p>
+        </h3>
+
+        <form>
+          <label>Type here: </label>
+          <input type="text" onChange={onChangeHandler} />
+        </form>
+        <BigText textForBigText={text} animate={run} />
+        <See title="Created TDD" description="Jerry was a racecar driver" />
       </div>
-
-      <h3 style={colour}>
-        <p>
-          Your mouse is at {point[0]}, {point[1]}
-        </p>
-        <p>Your text colour is changing according to the mouse position</p>
-      </h3>
-
-      <form>
-        <label>Type here: </label>
-        <input type="text" onChange={onChangeHandler} />
-      </form>
-      <BigText textForBigText={text} animate={run} />
     </div>
   );
 }
