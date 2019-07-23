@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
-import { TweenMax, Elastic } from "gsap/all";
+import React, { useEffect, useState } from "react";
+import { TweenMax, Elastic } from "gsap";
 
-let Name = () => {
+let Name = props => {
+  const [title, setTitle] = useState(props.name);
+
   useEffect(() => {
     TweenMax.to(".homepage__text", 2.6, {
       rotation: 360,
@@ -11,7 +13,7 @@ let Name = () => {
   });
   return (
     <div className="homepage__text ">
-      <h2>Bradley's Page</h2>
+      <h2 data-test="name">{title}</h2>
     </div>
   );
 };

@@ -7,6 +7,10 @@
   opacity: 0.9;
 }
 
+.animation__content {
+  margin: 40px;
+}
+
 .myTitle {
   opacity: 0.2;
   transition: opacity 3s;
@@ -45,4 +49,9 @@
 .logo__man {
   width: 40px;
   padding: 0 10px;
+}
+
+.see {
+  border: 1px solid orange;
+  padding: 0 30px;
 }

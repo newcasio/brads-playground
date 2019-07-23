@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { TimelineLite } from "gsap/all";
+import { TimelineLite } from "gsap";
 
 import Bang from "./soundEffects/bang.png";
 

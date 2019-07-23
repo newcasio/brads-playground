@@ -9,7 +9,7 @@ import "./home.css";
 function Home() {
   return (
     <div className="home__wrapper">
-      <Name />
+      <Name name="Bradley's Pagerino" />
       <Music />
       <Effects />
     </div>
