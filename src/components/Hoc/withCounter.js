@@ -3,6 +3,7 @@
 import React, { Component } from "react";
 
 const UpdatedComponent = (OriginalComponent, incrementBy) => {
+  //create a new component returning the original component, and add state, methods and data to it
   class NewComponent extends Component {
     constructor(props) {
       super(props);
@@ -12,8 +13,8 @@ const UpdatedComponent = (OriginalComponent, incrementBy) => {
       };
     }
     incrementCount = () => {
-      this.setState(prevState => {
-        return { count: prevState.count + incrementBy };
+      this.setState(currentStateObject => {
+        return { count: currentStateObject.count + incrementBy };
       });
     };
     render() {

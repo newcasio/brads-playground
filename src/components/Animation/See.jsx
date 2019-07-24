@@ -6,7 +6,7 @@ class See extends Component {
   render() {
     const { title, description } = this.props;
     return (
-      <div className="see">
+      <div className="see" data-test="seeComponent">
         <h3 data-test="titleValue">{title}</h3>
         <h4>Description:</h4>
         <h4 data-test="descriptionValue">{description}</h4>

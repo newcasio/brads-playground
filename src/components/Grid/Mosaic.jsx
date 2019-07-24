@@ -4,30 +4,62 @@ import "./mosaic.css";
 
 function Mosaic() {
   return (
-    <div className="mosaicWrapper">
+    <div className="mosaicWrapper" data-test="grid">
       <div className="box box1 ">
-        <img src={require("./cat1.jpg")} alt="swimming in money" />
+        <img
+          data-test="testImage"
+          src={require("./cat1.jpg")}
+          alt="swimming in money"
+        />
       </div>
       <div className="box box2">
-        <img src={require("./cat.png")} alt="samurai cat" />
+        <img
+          data-test="testImage"
+          src={require("./cat.png")}
+          alt="samurai cat"
+        />
       </div>
       <div className="box box3">
-        <img src={require("./cat1.jpg")} alt="swimming in money" />
+        <img
+          data-test="testImage"
+          src={require("./cat1.jpg")}
+          alt="swimming in money"
+        />
       </div>
       <div className="box box4">
-        <img src={require("./cat.png")} alt="samurai cat" />
+        <img
+          data-test="testImage"
+          src={require("./cat.png")}
+          alt="samurai cat"
+        />
       </div>
       <div className="box box5">
-        <img src={require("./cat1.jpg")} alt="swimming in money" />
+        <img
+          data-test="testImage"
+          src={require("./cat1.jpg")}
+          alt="swimming in money"
+        />
       </div>
       <div className="box box6">
-        <img src={require("./cat.png")} alt="samurai cat" />
+        <img
+          data-test="testImage"
+          src={require("./cat.png")}
+          alt="samurai cat"
+        />
       </div>
       <div className="box box7">
-        <img src={require("./cat1.jpg")} alt="swimming in money" />
+        <img
+          data-test="testImage"
+          src={require("./cat1.jpg")}
+          alt="swimming in money"
+        />
       </div>
       <div className="box box8">
-        <img src={require("./cat.png")} alt="samurai cat" />
+        <img
+          data-test="testImage"
+          src={require("./cat.png")}
+          alt="samurai cat"
+        />
       </div>
     </div>
   );
