@@ -1,6 +1,6 @@
 # React Lifecyle Methods
 
-Class-based components only (not funcitonal)
+Class-based components only (not functional)
 
 ---
 
