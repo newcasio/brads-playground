@@ -6,10 +6,10 @@ const login = {
 };
 
 const ad = {
-  title: "Mountain bike",
-  price: 99999,
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  title: "Chromag Mountain bike",
+  price: 3300,
+  phone: "0433222112",
+  description: "Awesome Chromag Rootdown."
 };
 
 describe("Gumtee testing", () => {
@@ -37,11 +37,14 @@ describe("Gumtee testing", () => {
   it("should show error if incorrect password entered", () => {
     cy.get(`input[id=login-password]`).type(login.incorrectPassword);
     cy.get(`button[id=btn-submit-login]`).click();
-    // cy.url().should("include", "t-login.html");
-    cy.get("div.notification--error", { timeout: 60000 }).should(
-      "contain",
-      "Sorry"
-    );
+    cy.url().should("include", "t-login.html");
+
+    //Alt test for login failure
+
+    //     cy.get("div.notification--error", { timeout: 60000 }).should(
+    //       "contain",
+    //       "Sorry"
+    //     );
   });
 
   it("should post an add correctly", () => {
