@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import SideToggle from "./SideToggle";
 import Logo from "./Logo";
 
-import "./nav.css";
+import "./Nav.css";
 
 function Nav(props) {
   return (

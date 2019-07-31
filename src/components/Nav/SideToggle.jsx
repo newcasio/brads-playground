@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./nav.css";
+import "./Nav.css";
 
 function SideToggle(props) {
   return (
