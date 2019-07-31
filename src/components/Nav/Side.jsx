@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Nav.css";
+import "./nav.css";
 
 function Side(props) {
   let sideClass = "side";
