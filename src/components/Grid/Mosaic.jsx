@@ -16,7 +16,7 @@ function Mosaic() {
         <img
           data-test="testImage"
           src={require("./cat.png")}
-          alt="samurai cat"
+          alt="samurai cat "
         />
       </div>
       <div className="box box3">

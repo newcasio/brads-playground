@@ -2,15 +2,17 @@ import React, { Component } from "react";
 
 import axios from "axios";
 
+import { myConfig } from "../../config.js";
+
 import "./map.css";
 
 function Confirm(props) {
-  if (props.submitted === null && !props.server) {
-    return <h3>Request denied. Please check you API key.</h3>;
+  if (props.submitted === null && props.server) {
+    return null;
   } else if (props.submitted) {
     return <h3>Marker added at {props.address}</h3>;
-  } else if (!props.server && props.submitted === true) {
-    return null;
+  } else if (!props.server && !props.submitted) {
+    return <h3>Request denied. Please check you API key.</h3>;
   } else {
     return <h3>Cannot find address</h3>;
   }
@@ -27,24 +29,22 @@ class MapInput extends Component {
       submittedOK: null,
       serverOK: true
     };
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.sendCoords = this.sendCoords.bind(this);
   }
 
-  sendCoords() {
+  sendCoords = () => {
     this.props.getInput(this.state);
-  }
+  };
 
   async handleSubmit(e) {
     try {
-      const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+      // const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+      const API_KEY = myConfig.googleMapsApiKey;
+      let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${
+        this.state.searchString
+      }&key=${API_KEY}`;
       e.preventDefault();
-      let call = await axios.get(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${
-          this.state.searchString
-        }&key=${API_KEY}`
-      );
+      let call = await axios.get(url);
       let newId = this.state.id + 1;
       if (call.data.status === "REQUEST_DENIED") {
         this.setState({ serverOK: false, submittedOK: false });
@@ -74,9 +74,9 @@ class MapInput extends Component {
     }
   }
 
-  handleChange(event) {
+  handleChange = event => {
     this.setState({ searchString: event.target.value });
-  }
+  };
 
   render() {
     return (

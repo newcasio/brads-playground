@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Nav from "./components/Nav/Nav";
-import Home from "./components/Home/Home";
-import Animation from "./components/Animation/Animation";
-import MyMap from "./components/Map/MyMap";
-import Mosaic from "./components/Grid/Mosaic";
-import Hoc from "./components/Hoc/Hoc";
-import Side from "./components/Nav/Side";
-import Unfocus from "./components/Nav/Unfocus";
+import Nav from "./components/nav/Nav";
+import Home from "./components/home/Home";
+import Animation from "./components/animation/Animation";
+import MyMap from "./components/map/MyMap";
+import Mosaic from "./components/grid/Mosaic";
+import Hoc from "./components/hoc/Hoc";
+import Side from "./components/nav/Side";
+import Unfocus from "./components/nav/Unfocus";
 
 import "./App.css";
 
