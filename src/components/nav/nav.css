@@ -1,0 +1,141 @@
+/* NAV/ROUTER STYLINGS */
+
+@import url("https://fonts.googleapis.com/css?family=Barriecito&display=swap");
+
+.logo__style {
+  font-family: "Barriecito", cursive;
+  font-size: 2rem;
+  color: #2aade3;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: black;
+  z-index: 1;
+}
+
+.nav__contents {
+  padding-left: 20px;
+}
+
+.nav__logo {
+  margin-left: 25px;
+}
+
+.navlinks {
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  min-width: 40%;
+  margin: auto, 40px;
+  padding: 0 20px;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: white;
+}
+
+.navlinks li:hover,
+.navlinks li:active {
+  color: orange;
+}
+
+.space {
+  flex: 1;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 22px;
+  width: 35px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hamburger:focus {
+  outline: none;
+}
+
+.side {
+  border: 1px black solid;
+  height: 100%;
+  background: white;
+  box-shadow: 2px 0 px 5px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  z-index: 201;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+}
+
+.side.showSide {
+  transform: translateX(0);
+}
+
+.side ul {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.side li {
+  margin: 0.5rem 0;
+}
+
+.side a {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.side a:hover,
+.side a:active {
+  color: yellowgreen;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  z-index: 200;
+}
+
+/* mobile/web */
+@media (max-width: 768px) {
+  .navlinks {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .side {
+    display: none;
+  }
+}
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+}

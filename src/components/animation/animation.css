@@ -1,0 +1,57 @@
+.animation__wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("dirrt.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.9;
+}
+
+.animation__content {
+  margin: 40px;
+}
+
+.myTitle {
+  opacity: 0.2;
+  transition: opacity 3s;
+  position: relative;
+}
+
+.myTitle:hover {
+  opacity: 1;
+}
+
+.home__titles {
+  display: inline-block;
+  animation-name: nameMove;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  position: relative;
+  animation-delay: 1s;
+  left: -300px;
+}
+
+@keyframes nameMove {
+  from {
+    color: red;
+    left: -300px;
+  }
+  to {
+    color: greenyellow;
+    left: 48%;
+  }
+}
+
+.big__text {
+  margin-left: 30px;
+}
+
+.logo__man {
+  width: 40px;
+  padding: 0 10px;
+}
+
+.see {
+  border: 1px solid orange;
+  padding: 0 30px;
+}
