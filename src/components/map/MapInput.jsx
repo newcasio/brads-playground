@@ -38,7 +38,6 @@ class MapInput extends Component {
 
   async handleSubmit(e) {
     try {
-      // const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
       const API_KEY = myConfig.googleMapsApiKey;
       let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${
         this.state.searchString

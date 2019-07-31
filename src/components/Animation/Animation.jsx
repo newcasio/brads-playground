@@ -29,7 +29,11 @@ function Animation() {
 
   //greensock animatino of input
   let run = () => {
-    TweenMax.to(".big__text", 2, { rotation: 360, ease: Elastic.easeOut });
+    TweenMax.to(".big__text", 2, {
+      rotation: 360,
+      ease: Elastic.easeOut
+    });
+    TweenMax.set(".big__text", { clearProps: "rotation, ease" });
   };
 
   return (
