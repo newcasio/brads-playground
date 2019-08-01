@@ -23,7 +23,6 @@
     "eject": "react-scripts eject",
     "test2": "jest",
     "cypress": "node_modules/.bin/cypress open",
-    "nodestart": "node src/server/app.js",
     "server": "nodemon src/server/app.js",
     "dev": "concurrently \"npm start\" \"npm run server\" "
   },

@@ -9,6 +9,7 @@ class Node extends Component {
     };
   }
 
+  //fetch, path is using proxy set up in package.json file.
   componentDidMount() {
     fetch("/api/customers")
       .then(res => res.json())
