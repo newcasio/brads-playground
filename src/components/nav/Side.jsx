@@ -22,6 +22,9 @@ function Side(props) {
         <li>
           <a href="/hoc">Higher order components</a>
         </li>
+        <li>
+          <a href="/node">Node</a>
+        </li>
       </ul>
     </nav>
   );
