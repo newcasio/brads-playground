@@ -7,6 +7,7 @@ import Animation from "./components/animation/Animation";
 import MyMap from "./components/map/MyMap";
 import Mosaic from "./components/grid/Mosaic";
 import Hoc from "./components/hoc/Hoc";
+import Node from "./components/node/node";
 import Side from "./components/nav/Side";
 import Unfocus from "./components/nav/Unfocus";
 
@@ -44,6 +45,7 @@ function App() {
             <Route path="/map" component={MyMap} />
             <Route path="/css_grid" component={Mosaic} />
             <Route path="/hoc" component={Hoc} />
+            <Route path="/node" component={Node} />
           </Switch>
         </div>
       </Router>

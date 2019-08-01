@@ -28,6 +28,9 @@ function Nav(props) {
           <Link className="nav__link" to="/hoc">
             <li>Higher Order Components</li>
           </Link>
+          <Link className="nav__link" to="/node">
+            <li>Node</li>
+          </Link>
         </ul>
       </nav>
     </div>
